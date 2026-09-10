@@ -7,7 +7,7 @@ async function getDb() {
   return neon(DATABASE_URL);
 }
 
-async function initDb(sql: ReturnType<typeof neon>) {
+async function initDb(sql: any) {
   await sql`
     CREATE TABLE IF NOT EXISTS ps_users (
       id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
